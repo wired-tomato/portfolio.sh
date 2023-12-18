@@ -1,21 +1,19 @@
 {
-  "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
-  "title": "LiveTerm",
-  "name": "John Doe",
-  "ascii": "liveterm",
+  "readmeUrl": "https://raw.githubusercontent.com/wired-tomato/wired-tomato/main/README.md",
+  "title": "./portfolio.sh",
+  "name": "WiredTomato",
+  "ascii": "wired.tomato",
   "social": {
-    "github": "github",
-    "linkedin": "linkedin"
+    "github": "wired-tomato",
+    "discord_server": "8H93SqCHr5",
+    "discord_handle": ".tomatoes."
   },
-  "email": "contact@email.com",
-  "ps1_hostname": "liveterm",
-  "ps1_username": "visitor",
-  "repo": "https://github.com/Cveinnt/LiveTerm",
-  "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
-  "donate_urls": {
-    "paypal": "https://paypal.me/cveinnt",
-    "patreon": "https://patreon.com/cveinnt"
-  },
+  "email": "brokenfuse.self@gmail.com",
+  "ps1_hostname": "wiredtomato.net",
+  "ps1_username": "guest",
+  "repo": "https://github.com/wired-tomato/portfolio.sh",
+  "resume_url": "https://github.com/wired-tomato",
+  "donate_urls": { },
   "colors": {
     "light": {
       "background": "#FBF1C9",

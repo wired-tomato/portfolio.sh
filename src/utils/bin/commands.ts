@@ -6,12 +6,12 @@ import config from '../../../config.json';
 // Help
 export const help = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join(', ');
-  var c = '';
+  let c = './portfolio.sh\n';
   for (let i = 1; i <= Object.keys(bin).sort().length; i++) {
     if (i % 7 === 0) {
       c += Object.keys(bin).sort()[i - 1] + '\n';
     } else {
-      c += Object.keys(bin).sort()[i - 1] + ' ';
+      c += Object.keys(bin).sort()[i - 1] + ' | ';
     }
   }
   return `Welcome! Here are all the available commands:
@@ -43,14 +43,6 @@ export const resume = async (args: string[]): Promise<string> => {
   return 'Opening resume...';
 };
 
-// Donate
-export const donate = async (args: string[]): Promise<string> => {
-  return `thank you for your interest. 
-here are the ways you can support my work:
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
-`;
-};
 
 // Contact
 export const email = async (args: string[]): Promise<string> => {
@@ -64,10 +56,10 @@ export const github = async (args: string[]): Promise<string> => {
   return 'Opening github...';
 };
 
-export const linkedin = async (args: string[]): Promise<string> => {
-  window.open(`https://www.linkedin.com/in/${config.social.linkedin}/`);
+export const discord = async (args: string[]): Promise<string> => {
+  window.open(`https://discord.gg/${config.social.discord_server}`);
 
-  return 'Opening linkedin...';
+  return 'Opening discord server...';
 };
 
 // Search
@@ -101,16 +93,11 @@ export const whoami = async (args: string[]): Promise<string> => {
 };
 
 export const ls = async (args: string[]): Promise<string> => {
-  return `a
-bunch
-of
-fake
-directories`;
+  return `what even is a directory?`;
 };
 
 export const cd = async (args: string[]): Promise<string> => {
-  return `unfortunately, i cannot afford more directories.
-if you want to help, you can type 'donate'.`;
+  return `who really needs directories?`;
 };
 
 export const date = async (args: string[]): Promise<string> => {
@@ -141,14 +128,14 @@ export const sudo = async (args?: string[]): Promise<string> => {
 // Banner
 export const banner = (args?: string[]): string => {
   return `
-█████        ███                       ███████████                                   
-░░███        ░░░                       ░█░░░███░░░█                                   
- ░███        ████  █████ █████  ██████ ░   ░███  ░   ██████  ████████  █████████████  
- ░███       ░░███ ░░███ ░░███  ███░░███    ░███     ███░░███░░███░░███░░███░░███░░███ 
- ░███        ░███  ░███  ░███ ░███████     ░███    ░███████  ░███ ░░░  ░███ ░███ ░███ 
- ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███ 
- ███████████ █████  ░░█████   ░░██████     █████   ░░██████  █████     █████░███ █████
-░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ 
+ __   __  ___   __      _______    _______  ________  ___________  ______   ___      ___       __  ___________  ______    
+|"  |/  \\|  "| |" \\    /"      \\  /"     "||"      "\\("     _   ")/    " \\ |"  \\    /"  |     /""\\("     _   ")/    " \\   
+|'  /    \\:  | ||  |  |:        |(: ______)(.  ___  :))__/  \\\\__/// ____  \\ \\   \\  //   |    /    \\)__/  \\\\__/// ____  \\  
+|: /'        | |:  |  |_____/   ) \\/    |  |: \\   ) ||   \\\\_ /  /  /    ) :)/\\\\  \\/.    |   /' /\\  \\  \\\\_ /  /  /    ) :) 
+ \\//  /\\'    | |.  |   //      /  // ___)_ (| (___\\ ||   |.  | (: (____/ //|: \\.        |  //  __'  \\ |.  | (: (____/ //  
+ /   /  \\\\   | /\\  |\\ |:  __   \\ (:      "||:       :)   \\:  |  \\        / |.  \\    /:  | /   /  \\\\  \\\\:  |  \\        /   
+|___/    \\___|(__\\_|_)|__|  \\___) \\_______)(________/     \\__|   \\"_____/  |___|\\__/|___|(___/    \\___)\\__|   \\"_____/    
+                                                                                                                          
 
 Type 'help' to see the list of available commands.
 Type 'sumfetch' to display summary.

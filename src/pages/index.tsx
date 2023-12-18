@@ -21,8 +21,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
     clearHistory,
     setLastCommandIndex,
   } = useHistory([]);
-
-  const init = React.useCallback(() => setHistory(banner()), []);
+  const init = React.useCallback(() => {
+    setCommand('./portfolio.sh');
+    //setHistory(banner());
+  }, []);
 
   React.useEffect(() => {
     init();

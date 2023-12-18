@@ -12,6 +12,9 @@ export const shell = async (
 
   if (args[0] === 'clear') {
     clearHistory();
+  } else if (command == `./portfolio.sh`) {
+    const output = bin['banner'](args.slice(1));
+    setHistory(output);
   } else if (command === '') {
     setHistory('');
   } else if (Object.keys(bin).indexOf(args[0]) === -1) {

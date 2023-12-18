@@ -28,3 +28,15 @@ export const getQuote = async () => {
     quote: `“${data.content}” — ${data.author}`,
   };
 };
+
+export const getModrinthProjects = async () => {
+  const { data } = await axios.get(
+    `https://api.modrinth.com/v2/user/${config.social.modrinth}/projects`,
+    {
+      headers: {
+        'User-Agent': 'wired-tomato/portfolio.sh/1.0.0 (wiredtomato.net)',
+      },
+    },
+  );
+  return data;
+};

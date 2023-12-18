@@ -1,6 +1,6 @@
 // // List of commands that require API calls
 
-import { getProjects } from '../api';
+import { getModrinthProjects, getProjects } from '../api';
 import { getQuote } from '../api';
 import { getReadme } from '../api';
 import { getWeather } from '../api';
@@ -33,4 +33,15 @@ export const weather = async (args: string[]): Promise<string> => {
   }
   const weather = await getWeather(city);
   return weather;
+};
+
+export const modrinth_projects = async (args: string[]): Promise<string> => {
+  const projects = await getModrinthProjects();
+
+  return projects
+    .map(
+      (project) =>
+        `${project.title} - ${project.description} | <a class="text-light-blue dark:text-dark-blue underline" href="https://modrinth.com/${project.project_type}/${project.id}" target="_blank">https://modrinth.com/${project.project_type}/${project.slug}</a>`,
+      )
+    .join('\n');
 };
